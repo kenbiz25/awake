@@ -19,10 +19,13 @@ The first visit to each page in dev compiles it, which can take a minute or more
 | Script | What it does |
 |---|---|
 | `npm run dev` | Dev server on port 3030 |
+| `npm run dev:clean` | Clear the `.next` cache, then start the dev server |
 | `npm run build` | Production build |
 | `npm start` | Serve the production build on port 3030 |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | TypeScript, no emit |
+
+If the dev server shows `Cannot find module './NNN.js'` or pages return 500 after a hot reload, the `.next` cache is corrupted (common on Windows). Stop the server and run `npm run dev:clean`.
 
 To run a production build while `npm run dev` is running, build into a separate folder so they don't share `.next`:
 
